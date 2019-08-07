@@ -21,13 +21,13 @@ import static org.mockito.Mockito.when;
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
 public class TrackDAOTest {
-    Track track;
+   private Track track;
     @Mock
-    TrackRepository trackRepository;
+    private TrackRepository trackRepository;
 
     //Inject the mocks as dependencies into UserServiceImpl
     @InjectMocks
-    TrackDAOImpl trackimpl;
+   private TrackDAOImpl trackimpl;
     List<Track> list = null;
 
 
