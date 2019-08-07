@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "api/v1")
 public class TrackController {
-
+ResponseEntity responseEntity;
 	@Autowired
 	private TrackDAO trackDAO;
 
@@ -24,7 +24,7 @@ public class TrackController {
 	@PostMapping("track")
 	public ResponseEntity<?> saveTrack(@RequestBody Track track)
 	{
-		ResponseEntity responseEntity;
+
 		try {
 			trackDAO.saveTrack(track);
 			responseEntity = new ResponseEntity<String>("successfully created", HttpStatus.CREATED);
@@ -39,7 +39,7 @@ public class TrackController {
 	@DeleteMapping("track")
 	public ResponseEntity<?> deleteTrack(@RequestBody Track track)
 	{
-		ResponseEntity responseEntity;
+
 		try {
 
 			trackDAO.deleteTrack(track.getId());
