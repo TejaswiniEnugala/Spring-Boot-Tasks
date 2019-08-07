@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ApplicationListen implements ApplicationListener<ContextRefreshedEvent> {
-    TrackDAO trackDAO;
+  private   TrackDAO trackDAO;
     public ApplicationListen(TrackDAO trackDAO){
         this.trackDAO=trackDAO;
     }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TrackCommandLineListener implements CommandLineRunner {
     @Autowired
-    TrackDAO trackDAO;
+  private   TrackDAO trackDAO;
     @Override
     public void run(String... args) throws Exception {
         Logger logger= LoggerFactory.getLogger((TrackCommandLineListener.class));

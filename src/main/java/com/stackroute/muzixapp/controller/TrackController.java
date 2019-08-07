@@ -19,9 +19,9 @@ import java.util.List;
 public class TrackController {
 
 
-	TrackDAO trackService;
+	private TrackDAO trackService;
 
-
+ResponseEntity responseEntity;
 	String exp;
 	String success;
 	@Autowired
@@ -34,7 +34,6 @@ public class TrackController {
 	@PostMapping("track")
 	public ResponseEntity<?> saveTrack( Track track){
 
-		ResponseEntity responseEntity;
 
 		try{
 			trackService.saveTrack(track);
@@ -52,7 +51,7 @@ public class TrackController {
 
 	@GetMapping("tracks")
 	public  ResponseEntity<?> getallTracks(){
-		ResponseEntity responseEntity;
+
 		try {
 			responseEntity = new ResponseEntity <List<Track>>(trackService.getAllTracks(),HttpStatus.OK);
 		} catch (TrackNotFoundException e) {
@@ -65,8 +64,6 @@ public class TrackController {
 
 	@DeleteMapping("track/{id}")
 	public 	ResponseEntity<?> delete(@PathVariable long id){
-
-		ResponseEntity responseEntity;
 
 		try{
 			int result =  trackService.deleteTrack(id);
@@ -93,7 +90,6 @@ public class TrackController {
 	@PutMapping("track/{id}")
 	public ResponseEntity<?> updateTrack( int id,Track track){
 
-		ResponseEntity responseEntity;
 
 		try{
 			trackService.UpdateTrack(id,track);
@@ -111,7 +107,7 @@ public class TrackController {
 	@PostMapping("track/{name}")
 	public ResponseEntity<?> getTrackbyName(@PathVariable String name) {
 
-		ResponseEntity responseEntity;
+
 
 		try {
 			responseEntity = new ResponseEntity<List<Track>>(trackService.getTrackbyName(name), HttpStatus.CREATED);

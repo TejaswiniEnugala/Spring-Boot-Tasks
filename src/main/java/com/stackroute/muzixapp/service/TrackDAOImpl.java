@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class TrackDAOImpl implements TrackDAO {
 
-    TrackRepository trackRepository;
+   private TrackRepository trackRepository;
 
     @Autowired
     public TrackDAOImpl(TrackRepository trackRepository) {
